@@ -10,7 +10,8 @@ public class TestBase {
 
     public static void main(String[] args) {
         launchChrome();
-        launchFirefox();
+        loseBrowser();
+
     }
 
     public static void  launchChrome(){
@@ -21,4 +22,9 @@ public class TestBase {
         System.setProperty("webdriver.gecko.driver",System.getProperty("user.dir")+"//src//main//resources//geckodriver.exe");
         driver=new FirefoxDriver();
    }
+
+    public static void loseBrowser(){
+        driver.quit();
+    }
+
 }

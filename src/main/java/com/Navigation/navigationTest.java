@@ -13,13 +13,21 @@ public class navigationTest extends TestBase {
         myAccount.click();
         WebElement rgr = driver.findElement(By.xpath("//*[@id=\"top-links\"]/ul/li[2]/ul/li[1]/a"));
         rgr.click();
-        WebElement fname = driver.findElement(By.xpath("//*[@id=\"input-firstname\"]"));
+        //WebElement fname = driver.findElement(By.xpath("//*[@id=\"input-firstname\"]"));
+       WebElement fname = getElementByName("firstname");
         fname.sendKeys("tarek");
         Thread.sleep(3000);
-        WebElement lname = driver.findElement(By.xpath("//*[@id=\"input-lastname\"]"));
+        //WebElement lname = driver.findElement(By.xpath("//*[@id=\"input-lastname\"]"));
+        WebElement lname = getElementByXpath("//*[@id=\"input-lastname\"]");
         lname.sendKeys("khan");
         Thread.sleep(3000);
 
+        WebElement email = getElementByID("input-email");
+        email.sendKeys("tarek@gmail.com");
+        Thread.sleep(3000);
+        WebElement phone = getElementByCSS("#input-telephone");
+        phone.sendKeys("01713");
+        Thread.sleep(3000);
         driver.navigate().back();
         Thread.sleep(3000);
         driver.navigate().forward();

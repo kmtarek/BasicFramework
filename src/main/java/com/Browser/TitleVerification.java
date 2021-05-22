@@ -10,7 +10,7 @@ public class TitleVerification extends TestBase {
         driver.get("https://www.ebay.com/");
         String expTitle="Electr, Cars, Fashion, Collectibles & More | eBay";
         String actTitle = driver.getTitle();
-        if(expTitle.contains("Fashion")){
+        if(actTitle.contains("Fashion")){
 
             System.out.println("Title Verified and Test Passed");
         }else{

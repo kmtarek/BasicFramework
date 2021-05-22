@@ -15,7 +15,7 @@ public class TestBase {
     public static void main(String[] args) throws InterruptedException, IOException {
         launchChrome();
         loseBrowser();
-
+        launchFirefox();
     }
 
     public static void launchChrome() {
@@ -29,6 +29,7 @@ public class TestBase {
     }
 
     public static void loseBrowser() {
+
         driver.quit();
     }
 

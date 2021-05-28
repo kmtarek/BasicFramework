@@ -1,11 +1,11 @@
 package com.Base;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.io.File;
 import java.io.IOException;
 
 public class TestBase {
@@ -14,7 +14,7 @@ public class TestBase {
 
     public static void main(String[] args) throws InterruptedException, IOException {
         launchChrome();
-        loseBrowser();
+        closeBrowser();
         launchFirefox();
     }
 
@@ -28,7 +28,7 @@ public class TestBase {
         driver = new FirefoxDriver();
     }
 
-    public static void loseBrowser() {
+    public static void closeBrowser() {
 
         driver.quit();
     }
@@ -55,6 +55,23 @@ public class TestBase {
         return driver.findElement(By.cssSelector(locator));
 
     }
+public static void takePageScreenShot(WebDriver driver, String name) throws IOException {
+
+    TakesScreenshot ts = (TakesScreenshot)driver;
+    File src = ts.getScreenshotAs(OutputType.FILE);
+    File trg = new File(System.getProperty("user.dir")+"//ScreenShots//"+name+".png");
+    FileUtils.copyFile(src,trg);
+
+    }
+    public static void takeElementScreenShot(WebDriver driver, WebElement element, String name) throws IOException {
+
+        File src = element.getScreenshotAs(OutputType.FILE);
+        File trg = new File(System.getProperty("user.dir")+"//ScreenShots//"+name+".png");
+        FileUtils.copyFile(src, trg);
+
+
+    }
+
 
     }
 

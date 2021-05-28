@@ -19,6 +19,6 @@ public class TextVerification extends TestBase {
 
             System.out.println("Text is verified and Test is FAILED !");
         }
-        loseBrowser();
+        closeBrowser();
     }
 }

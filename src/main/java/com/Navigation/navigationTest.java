@@ -4,9 +4,11 @@ import com.Base.TestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.io.IOException;
+
 public class navigationTest extends TestBase {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, IOException {
         launchChrome();
         driver.get("https://demo.opencart.com/");
         WebElement myAccount = driver.findElement(By.xpath("//*[@id=\"top-links\"]/ul/li[2]/a"));
@@ -32,6 +34,8 @@ public class navigationTest extends TestBase {
         Thread.sleep(3000);
         driver.navigate().forward();
 
+        takePageScreenShot(driver, "fullpage");
+
         String pageSource = driver.getPageSource();
 
         boolean actfname = pageSource.contains("tarek");
@@ -48,7 +52,9 @@ public class navigationTest extends TestBase {
             System.out.println("Text doesn't Exist and Test is FAILED");
         }
 
-        loseBrowser();
+
+
+        closeBrowser();
 
 
     }

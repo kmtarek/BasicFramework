@@ -16,6 +16,6 @@ public class UrlVerification extends TestBase {
             System.out.println("URL Verified and Test is FAILED !");
         }
 
-        loseBrowser();
+        closeBrowser();
     }
 }

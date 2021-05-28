@@ -24,7 +24,7 @@ public class ReadFromProperty extends TestBase {
             driver.get(pr.getProperty("web"));
             driver.findElement(By.xpath(pr.getProperty("gmail"))).click();
             Thread.sleep(3000);
-            loseBrowser();
+            closeBrowser();
         }
 
 

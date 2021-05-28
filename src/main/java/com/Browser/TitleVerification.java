@@ -17,7 +17,7 @@ public class TitleVerification extends TestBase {
             System.out.println("Title Verified and Test FAILED!!!");
             System.out.println("Actual Title is :"+actTitle);
         }
-        loseBrowser();
+        closeBrowser();
     }
 
 
